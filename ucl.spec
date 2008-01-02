@@ -14,6 +14,7 @@ URL:		http://www.oberhumer.com/opensource/ucl/
 Source0:	http://www.oberhumer.com/opensource/ucl/download/%name-%version.tar.bz2
 BuildRequires:	libtool
 BuildRequires:	autoconf2.5
+BuildRoot:	%{_tmppath}/%{lib_name}-buildroot
 
 %description
 UCL implements a number of algorithms with the following features:
