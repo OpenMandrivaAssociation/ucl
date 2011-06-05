@@ -1,20 +1,17 @@
-%define lib_name_orig libucl
 %define lib_major 1
 %define lib_name %mklibname %name %{lib_major}
+%define develname %mklibname -d %name
 
 # virtual package to enforce naming convention
 
 Summary:	The UCL Compression Library
 Name:		ucl
 Version:	1.03
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	GPL
 Group:		System/Libraries
 URL:		http://www.oberhumer.com/opensource/ucl/
 Source0:	http://www.oberhumer.com/opensource/ucl/download/%name-%version.tar.bz2
-BuildRequires:	libtool
-BuildRequires:	autoconf2.5
-BuildRoot:	%{_tmppath}/%{lib_name}-buildroot
 
 %description
 UCL implements a number of algorithms with the following features:
@@ -51,19 +48,19 @@ UCL implements a number of algorithms with the following features:
 UCL supports in-place decompression.
 
 This package contains the library needed to run programs dynamically
-linked with %{lib_name_orig}.
+linked with %{name}.
 
 
 # devel part of the bundle
 
-%package -n	%{lib_name}-devel
+%package -n	%{develname}
 Summary:	The UCL Compression Library - development environment
 Group:		Development/C
 Requires:	%{lib_name} = %{version}-%release
-Provides:	%{lib_name_orig}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{_lib}ucl1-devel < 1.03-8
 
-%description -n	%{lib_name}-devel
+%description -n	%{develname}
 UCL implements a number of algorithms with the following features:
 - Decompression is simple and *very* fast. 
 - Requires no memory for decompression. 
@@ -92,14 +89,6 @@ rm -rf %{buildroot}
 
 %makeinstall_std
 
-%if %mdkversion < 200900
-%post -n %{lib_name} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{lib_name} -p /sbin/ldconfig
-%endif
-
 %clean
 rm -rf %{buildroot}
 
@@ -108,7 +97,7 @@ rm -rf %{buildroot}
 %doc COPYING INSTALL NEWS README THANKS TODO
 %{_libdir}/*.so.*
 
-%files  -n %{lib_name}-devel
+%files  -n %{develname}
 %defattr(-,root,root)
 %doc COPYING INSTALL NEWS README THANKS TODO
 %{_libdir}/*.a
