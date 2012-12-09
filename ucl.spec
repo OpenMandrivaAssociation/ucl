@@ -101,9 +101,51 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc COPYING INSTALL NEWS README THANKS TODO
 %{_libdir}/*.a
-%{_libdir}/*.la
 %{_libdir}/*.so
 %dir %{_includedir}/ucl/
 %{_includedir}/ucl/*.h
 
+
+
+
+%changelog
+* Sun Jun 05 2011 Funda Wang <fwang@mandriva.org> 1.03-8mdv2011.0
++ Revision: 682756
+- rebuild
+
+* Wed Sep 09 2009 Thierry Vignaud <tv@mandriva.org> 1.03-7mdv2010.0
++ Revision: 434493
+- rebuild
+- rebuild
+
+* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.03-5mdv2009.0
++ Revision: 255037
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 1.03-3mdv2008.1
++ Revision: 140924
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Mon Dec 11 2006 Oden Eriksson <oeriksson@mandriva.com> 1.03-3mdv2007.0
++ Revision: 94911
+- rebuild
+- Import ucl
+
+* Mon Dec 11 2006 Oden Eriksson <oeriksson@mandriva.com> 1.03-2mdv2007.1
+- rebuild
+
+* Sun Oct 03 2004 Goetz Waschk <waschk@linux-mandrake.com> 1.03-1mdk
+- New release 1.03
+
+* Thu Jul 01 2004 Götz Waschk <waschk@linux-mandrake.com> 1.02-1mdk
+- major 1
+- source URL
+- New release 1.02
 
