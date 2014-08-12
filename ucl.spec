@@ -81,27 +81,18 @@ support.
 %setup -q 
 
 %build
-%configure2_5x --enable-shared
+%configure --enable-shared
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files -n %{lib_name}
-%defattr(-,root,root)
 %doc COPYING INSTALL NEWS README THANKS TODO
 %{_libdir}/*.so.*
 
 %files  -n %{develname}
-%defattr(-,root,root)
 %doc COPYING INSTALL NEWS README THANKS TODO
-%{_libdir}/*.a
 %{_libdir}/*.so
 %dir %{_includedir}/ucl/
 %{_includedir}/ucl/*.h
-
