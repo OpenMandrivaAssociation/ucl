@@ -12,6 +12,8 @@ License:	GPL
 Group:		System/Libraries
 URL:		http://www.oberhumer.com/opensource/ucl/
 Source0:	http://www.oberhumer.com/opensource/ucl/download/%name-%version.tar.bz2
+# https://dev.openwrt.org/browser/packages/libs/ucl/patches/002-missing-macros.patch?rev=24363&format=txt
+Patch0:		002-missing-macros.patch
 
 %description
 UCL implements a number of algorithms with the following features:
@@ -79,6 +81,7 @@ support.
 %prep 
 
 %setup -q 
+%apply_patches
 
 %build
 %configure --enable-shared
