@@ -1,6 +1,7 @@
 %define lib_major 1
 %define lib_name %mklibname %name %{lib_major}
 %define develname %mklibname -d %name
+%define _disable_rebuild_configure 1
 
 # virtual package to enforce naming convention
 
