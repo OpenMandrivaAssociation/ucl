@@ -8,12 +8,12 @@
 
 Summary:	The UCL Compression Library
 Name:		ucl
-Version:	1.04
+Version:	1.03
 Release:	17
 License:	GPL
 Group:		System/Libraries
 URL:		http://www.oberhumer.com/opensource/ucl/
-Source0:	http://www.oberhumer.com/opensource/ucl/download/%name-%version.tar.bz2
+Source0:	http://www.oberhumer.com/opensource/ucl/download/%{name}-%{version}.tar.gz
 # https://dev.openwrt.org/browser/packages/libs/ucl/patches/002-missing-macros.patch?rev=24363&format=txt
 Patch0:		002-missing-macros.patch
 
