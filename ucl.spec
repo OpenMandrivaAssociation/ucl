@@ -8,7 +8,7 @@
 
 Summary:	The UCL Compression Library
 Name:		ucl
-Version:	2
+Version:	1.04
 Release:	17
 License:	GPL
 Group:		System/Libraries
