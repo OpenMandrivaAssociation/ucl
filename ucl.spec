@@ -77,7 +77,7 @@ UCL implements a number of algorithms with the following features:
 - Algorithm is lossless. 
 UCL supports in-place decompression.
 
-Install %{name} if you need to compile an application with %{lib_name}
+Install %{name} if you need to compile an application with %{libname}
 support.
 
 %prep 
