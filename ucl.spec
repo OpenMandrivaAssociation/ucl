@@ -17,6 +17,11 @@ Source0:	http://www.oberhumer.com/opensource/ucl/download/%{name}-%{version}.tar
 # https://dev.openwrt.org/browser/packages/libs/ucl/patches/002-missing-macros.patch?rev=24363&format=txt
 Patch0:		002-missing-macros.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 UCL implements a number of algorithms with the following features:
 - Decompression is simple and *very* fast. 
